@@ -1,42 +1,40 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.all-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*모바일 (364px 이상)*/
+@media (min-width: 364px) {
+  .all-container {
+    max-width: 100%;
+    padding: 0 20px;
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* 태블릿 (768px 이상) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 작은 데스크탑 (1024px 이상) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 100%;
+  }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* 큰 데스크탑 (1280px 이상) */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 100%;
   }
 }
