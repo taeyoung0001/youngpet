@@ -29,7 +29,9 @@ const Navbar = () => {
 
         <div className={classes.userContainer}>
           {user ? (
-            <div className={classes.userName}>welcome, {user.name}님</div>
+            <Link href="/about">
+              <div className={classes.userName}>welcome, {user.name}님</div>
+            </Link>
           ) : (
             <div className={classes.userWrap}>
               <Link href="/login">Login</Link>
@@ -41,7 +43,9 @@ const Navbar = () => {
             <FaCartPlus />
           </div>
           <div className={classes.mobileAbout}>
-            <IoPersonSharp />
+            <Link href="/about">
+              <IoPersonSharp />
+            </Link>
           </div>
         </div>
       </div>

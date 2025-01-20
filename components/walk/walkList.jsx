@@ -19,7 +19,7 @@ const WalkList = ({ walkResult }) => {
             {walkItems.sale ? (
               <Bedge title="세일중" bgColor="red" color="white" />
             ) : null}
-            <Link href="/reserve">
+            <Link href={`/reserve/${walkItems._id}`}>
               <ReserveBtn title="예약하기" />
             </Link>
           </div>
