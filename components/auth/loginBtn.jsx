@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import classes from "./loginBtn.module.scss";
 
 const LoginBtn = () => {
   const emailRef = useRef();

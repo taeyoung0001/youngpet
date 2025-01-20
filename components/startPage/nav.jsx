@@ -2,40 +2,63 @@
 import Link from "next/link";
 import classes from "./nav.module.scss";
 import useAuth from "@/hooks/useAuth";
+import { FaCartPlus } from "react-icons/fa6";
 
 const Navbar = () => {
   const user = useAuth();
+  console.log(user);
+
   const linkData = [
-    { href: "/home", title: "HOME" },
-    { href: "/home", title: "산책" },
-    { href: "/home", title: "케어서비스" },
-    { href: "/home", title: "정기케어" },
-    { href: "/home", title: "COMMUNITY" },
+    { href: "/home", title: "산책", subTitle: ["walk"] },
+    { href: "/home", title: "서비스", subTitle: ["training", "care "] },
+    { href: "/home", title: "정기케어", subTitle: ["Regular care"] },
+    {
+      href: "/home",
+      title: "COMMUNITY",
+      subTitle: ["about us", "Q&A", "EVENT"],
+    },
   ];
+
   return (
     <div className={classes.section}>
       <div className={classes.headSection}>
-        <Link href="/">LOGO</Link>
+        <Link href="/">NOTICE</Link>
+        <Link href="/">
+          <h2 className={classes.logo}>LOGO</h2>
+        </Link>
 
-        {user ? (
-          <div>welcome,{user.name}</div>
-        ) : (
-          <div className={classes.userWrap}>
-            <Link href="/login">Login</Link>
-            <Link href="/login">MYPAGE</Link>
-          </div>
-        )}
+        <div className={classes.userContainer}>
+          {user ? (
+            <div className={classes.userName}>welcome, {user.name}</div>
+          ) : (
+            <div className={classes.userWrap}>
+              <Link href="/login">Login</Link>
+              <span>/</span>
+              <Link href="/login">MYPAGE</Link>
+            </div>
+          )}
+        </div>
       </div>
       <nav className={classes.manuSection}>
-        <ul>
-          {linkData.map((links) => {
-            return (
-              <li key={links.title}>
-                <Link href={links.href}>{links.title}</Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className={classes.manuWrap}>
+          {linkData.map((links, index) => (
+            <div key={index}>
+              <Link className={classes.mainTitle} href={links.href}>
+                {links.title}
+              </Link>
+              <div className={classes.subTitle}>
+                {links.subTitle.map((sub, subIndex) => (
+                  <Link key={subIndex} className={classes.subWrap} href={"/"}>
+                    {sub}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className={classes.cart}>
+          <FaCartPlus />
+        </div>
       </nav>
     </div>
   );

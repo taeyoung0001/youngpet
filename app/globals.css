@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 .all-container {
   max-width: 1280px;
   margin: 0 auto;
@@ -7,6 +8,9 @@
 body {
   margin: 0;
   padding: 0;
+  /* font-family: "Rubik", serif; */
+  font-family: "Noto Sans KR", serif;
+  font-optical-sizing: auto;
 }
 
 /*모바일 (364px 이상)*/
@@ -35,6 +39,6 @@ body {
 /* 큰 데스크탑 (1280px 이상) */
 @media (min-width: 1280px) {
   .container {
-    max-width: 100%;
+    max-width: 1280px;
   }
 }
