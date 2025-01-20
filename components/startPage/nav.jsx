@@ -3,6 +3,7 @@ import Link from "next/link";
 import classes from "./nav.module.scss";
 import useAuth from "@/hooks/useAuth";
 import { FaCartPlus } from "react-icons/fa6";
+import { IoPersonSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const user = useAuth();
@@ -28,7 +29,7 @@ const Navbar = () => {
 
         <div className={classes.userContainer}>
           {user ? (
-            <div className={classes.userName}>welcome, {user.name}</div>
+            <div className={classes.userName}>welcome, {user.name}님</div>
           ) : (
             <div className={classes.userWrap}>
               <Link href="/login">Login</Link>
@@ -39,12 +40,15 @@ const Navbar = () => {
           <div className={classes.mobileCart}>
             <FaCartPlus />
           </div>
+          <div className={classes.mobileAbout}>
+            <IoPersonSharp />
+          </div>
         </div>
       </div>
       <nav className={classes.manuSection}>
         <div className={classes.manuWrap}>
           {linkData.map((links, index) => (
-            <div key={index}>
+            <div className={classes.manublock} key={index}>
               <Link className={classes.mainTitle} href={links.href}>
                 {links.title}
               </Link>

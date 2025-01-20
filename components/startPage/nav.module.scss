@@ -80,6 +80,17 @@
   }
 }
 
+.mobileAbout {
+  display: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+  &:hover {
+    color: #666;
+  }
+}
+
 .manuSection {
   max-width: 1280px;
   margin: 10px auto;
@@ -174,7 +185,7 @@
   .userContainer {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     .mobileCart {
       display: block; // 1024px 이하에서만 보임
     }
@@ -191,5 +202,39 @@
       justify-content: center;
       width: 100%;
     }
+  }
+}
+@media (max-width: 636px) {
+  .headSection {
+    .logo {
+      width: 30px;
+      left: -2px;
+    }
+  }
+  .userName {
+    display: none;
+  }
+  .mobileAbout {
+    display: block;
+  }
+  .manuWrap {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+    .manublock {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid rgb(138, 138, 138);
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+  .subTitle {
+    min-width: 80%;
+    top: 120%;
+    left: 0%;
+    right: 0%;
   }
 }

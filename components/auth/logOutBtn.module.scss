@@ -1,0 +1,25 @@
+// 변수 설정
+$primary-color: #4caf50;
+$secondary-color: #e8f5e9;
+$text-color: #2e7d32;
+$border-radius: 8px;
+
+.logOutBtn {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: $primary-color;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

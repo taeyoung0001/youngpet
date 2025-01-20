@@ -1,12 +1,8 @@
 import LogOutBtn from "../auth/logOutBtn";
+import classes from "./startingPage.module.scss";
 
 const StartingPage = () => {
-  return (
-    <div>
-      <h2>hello this is homepage</h2>
-      <LogOutBtn />
-    </div>
-  );
+  return <div className={classes.visualLink}></div>;
 };
 
 export default StartingPage;

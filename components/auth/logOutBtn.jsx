@@ -1,3 +1,5 @@
+import classes from "./logOutBtn.module.scss";
+
 const LogOutBtn = () => {
   const logOutHandler = () => {
     if (localStorage.getItem("token")) {
@@ -6,7 +8,11 @@ const LogOutBtn = () => {
 
     window.location.href = "/";
   };
-  return <button onClick={logOutHandler}>로그아웃</button>;
+  return (
+    <button className={classes.logOutBtn} onClick={logOutHandler}>
+      로그아웃
+    </button>
+  );
 };
 
 export default LogOutBtn;
