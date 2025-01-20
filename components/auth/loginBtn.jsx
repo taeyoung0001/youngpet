@@ -37,20 +37,25 @@ const LoginBtn = () => {
     }
   };
   return (
-    <>
-      <h2>로그인페이지</h2>
-      <form onSubmit={loginHandleSubmit}>
-        <div>
-          <label htmlFor="">email</label>
-          <input type="email" id="email" ref={emailRef} />
+    <div className={classes.loginWrap}>
+      <h2 className={classes.loginTitle}>LOGIN</h2>
+      <form className={classes.loginForm} onSubmit={loginHandleSubmit}>
+        <div className={classes.emailWrap}>
+          <input placeholder="email" type="email" id="email" ref={emailRef} />
         </div>
-        <div>
-          <label htmlFor="">password</label>
-          <input type="password" id="password" ref={passwordRef} />
+        <div className={classes.emailWrap}>
+          <input
+            placeholder="password"
+            type="password"
+            id="password"
+            ref={passwordRef}
+          />
         </div>
-        <button type="submit">로그인</button>
+        <button className={classes.submitBtn} type="submit">
+          로그인
+        </button>
       </form>
-    </>
+    </div>
   );
 };
 

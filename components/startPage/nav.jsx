@@ -6,16 +6,15 @@ import { FaCartPlus } from "react-icons/fa6";
 
 const Navbar = () => {
   const user = useAuth();
-  console.log(user);
 
   const linkData = [
-    { href: "/home", title: "산책", subTitle: ["walk"] },
-    { href: "/home", title: "서비스", subTitle: ["training", "care "] },
-    { href: "/home", title: "정기케어", subTitle: ["Regular care"] },
+    { href: "/walk", title: "산책", subTitle: ["walk"] },
+    { href: "/service", title: "서비스", subTitle: ["training", "care "] },
+    { href: "/care", title: "정기케어", subTitle: ["Regular care"] },
     {
-      href: "/home",
+      href: "/community",
       title: "COMMUNITY",
-      subTitle: ["about us", "Q&A", "EVENT"],
+      subTitle: ["about us", "faq", "event"],
     },
   ];
 
@@ -24,7 +23,7 @@ const Navbar = () => {
       <div className={classes.headSection}>
         <Link href="/">NOTICE</Link>
         <Link href="/">
-          <h2 className={classes.logo}>LOGO</h2>
+          <img className={classes.logo} src="/logo.png" alt="" />
         </Link>
 
         <div className={classes.userContainer}>
@@ -37,6 +36,9 @@ const Navbar = () => {
               <Link href="/login">MYPAGE</Link>
             </div>
           )}
+          <div className={classes.mobileCart}>
+            <FaCartPlus />
+          </div>
         </div>
       </div>
       <nav className={classes.manuSection}>
@@ -48,7 +50,11 @@ const Navbar = () => {
               </Link>
               <div className={classes.subTitle}>
                 {links.subTitle.map((sub, subIndex) => (
-                  <Link key={subIndex} className={classes.subWrap} href={"/"}>
+                  <Link
+                    key={subIndex}
+                    className={classes.subWrap}
+                    href={`/${sub}`}
+                  >
                     {sub}
                   </Link>
                 ))}

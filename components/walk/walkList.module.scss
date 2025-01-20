@@ -1,0 +1,54 @@
+.walkWrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3개의 컬럼으로 균등하게 나눔
+  gap: 20px;
+  padding: 20px;
+
+  .walkcard {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    h4 {
+      margin: 8px 0;
+      font-size: 1rem;
+
+      &:nth-child(2) {
+        // title
+        font-weight: 600;
+      }
+
+      &:nth-child(3) {
+        // price
+        color: #666;
+      }
+    }
+  }
+}
+
+// 반응형 디자인 추가
+@media (max-width: 1024px) {
+  .walkWrap {
+    grid-template-columns: repeat(2, 1fr); // 태블릿에서는 2열
+  }
+}
+
+@media (max-width: 640px) {
+  .walkWrap {
+    grid-template-columns: 1fr; // 모바일에서는 1열
+  }
+}
