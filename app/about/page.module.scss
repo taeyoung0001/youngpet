@@ -1,40 +1,35 @@
-$primary-color: #4caf50;
-$secondary-color: #e8f5e9;
-$text-color: #2e7d32;
-$border-radius: 8px;
-
-.aboutPage {
+/* userInfoContainer 스타일 */
+.userInfoContainer {
+  background-color: #e6f7e6; /* 연한 초록색 배경 */
   padding: 20px;
-  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
   margin: 0 auto;
-  background-color: $secondary-color;
-  border-radius: $border-radius;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 
   h2 {
+    color: #4caf50; /* 초록색 텍스트 */
     font-size: 24px;
-    font-weight: bold;
-    color: $primary-color;
-    text-align: center;
     margin-bottom: 20px;
   }
+}
 
-  .userInfo {
-    padding: 15px;
-    background-color: white;
-    border: 1px solid $primary-color;
-    border-radius: $border-radius;
-    margin-bottom: 20px;
+/* userInfo 스타일 */
+.userInfo {
+  background-color: #b3e6b3; /* 더 짙은 초록색 배경 */
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
 
-    p {
-      font-size: 16px;
-      color: $text-color;
-      margin: 8px 0;
-      word-break: break-word;
+  p {
+    color: #388e3c; /* 조금 더 진한 초록색 텍스트 */
+    font-size: 16px;
+    margin: 10px 0;
 
-      &:first-of-type {
-        font-weight: bold;
-      }
+    strong {
+      font-weight: bold;
+      color: #2c6e2f; /* 다크 초록색 */
     }
   }
 }

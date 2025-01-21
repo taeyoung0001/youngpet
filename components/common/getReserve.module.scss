@@ -1,66 +1,52 @@
-.container {
-  max-width: 1280px;
-  padding-top: 40px;
-  margin: 0 auto;
-  width: 100%;
+.priceWrap {
   display: flex;
-  gap: 40px;
-  h2 {
-    margin: 0;
+  flex-direction: column;
+  align-items: start;
+  .form {
+    margin-bottom: 20px;
   }
-  .imgWarp {
-    img {
-      max-width: 500px; // 이미지가 컨테이너에 맞게 조정
-      height: auto; // 비율을 유지하며 조정
-      display: block; // 이미지의 블록 정렬
-      margin: 0 auto; // 중앙 정렬
-      object-fit: cover; // 필요한 경우 이미지 잘림 방지
-      border-radius: 20px;
-    }
-  }
-  select option {
-    white-space: pre-line; /* 줄바꿈 처리 */
-    text-align: left; /* 텍스트 정렬 */
-  }
-}
-
-@media (max-width: 1080px) {
-  .container {
-    h3 {
-      font-size: 15px;
+  .subBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    // animation: upDawn 1s infinite;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    background-color: rgb(184, 222, 184);
+    color: rgb(135, 135, 135);
+    font-weight: 700;
+    transition: 0.6s ease-in-out;
+    &:hover {
+      color: black;
+      background-color: rgb(91, 211, 91);
+      transform: translateY(-5px);
     }
   }
 }
 
 @media (max-width: 864px) {
-  .container {
-    width: 100%;
-    .imgWarp img {
-      width: 100%;
-      display: flex;
-      justify-self: center;
-      height: auto; // 비율 유지
-      object-fit: cover; // 이미지가 컨테이너에 잘 맞게 배치
-    }
+  .priceWrap {
     display: block;
-    margin: 0 auto;
-    h2 {
-      margin-top: 20px;
-      text-align: center;
-    }
-    h3 {
-      text-align: center;
-    }
+    margin-bottom: 40px;
   }
 }
 
-@media (max-width: 380px) {
-  .container {
-    h2 {
-      font-size: 14px;
-    }
-    h3 {
-      font-size: 12px;
-    }
+@keyframes upDawn {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
