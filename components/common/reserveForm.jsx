@@ -5,6 +5,7 @@ import SelectBar from "./selectBar";
 import classes from "./getReserve.module.scss";
 import DateSelectBar from "./dateSelectBar";
 import useAuth from "@/hooks/useAuth";
+import Link from "next/link";
 
 export default function ReserveForm({ timeSelect, bathSelect, weekSelect }) {
   const user = useAuth();
@@ -100,9 +101,11 @@ export default function ReserveForm({ timeSelect, bathSelect, weekSelect }) {
         onChange={handleDateChange} // 날짜 변경 시 처리 함수 추가
       />
       <Recipe data={selectedValues} />
-      <button className={classes.subBtn} onClick={handleSubmit} type="submit">
-        장바구니에 담기
-      </button>
+      <Link href="/cart">
+        <button className={classes.subBtn} onClick={handleSubmit} type="submit">
+          장바구니에 담기
+        </button>
+      </Link>
     </div>
   );
 }

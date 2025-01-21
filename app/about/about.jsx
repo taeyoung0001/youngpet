@@ -33,7 +33,7 @@ const AboutPage = () => {
   }, [user]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p style={{ textAlign: "center" }}>Loading...</p>;
   }
 
   return (
@@ -47,18 +47,25 @@ const AboutPage = () => {
           <p>
             <strong>이름:</strong> {user.name}
           </p>
-          <p>구매목록</p>
+
           {cartData && cartData.length > 0 ? (
-            <div>
-              {cartData.map((item, index) => (
-                <div key={index}>
-                  <h4>{item.bathTitle}</h4>
-                  <h4>{item.timeTitle}</h4>
-                  <h4>{item.weekTitle}</h4>
-                  <h4>{item.reserveDate}</h4>
-                </div>
-              ))}
-            </div>
+            <>
+              <div className={classes.cart}>
+                <h2>장바구니 목록</h2>
+                {cartData.map((item, index) => (
+                  <div className={classes.cartList} key={index}>
+                    <h4>목욕 :{item.bathTitle}</h4>
+                    <h4>시간 :{item.timeTitle}</h4>
+                    <h4>주말/명절 :{item.weekTitle}</h4>
+                    <h4>예약 날짜 :{item.reserveDate}</h4>
+                  </div>
+                ))}
+              </div>
+
+              <div className={classes.price}>
+                <h2>예약 목록</h2>
+              </div>
+            </>
           ) : (
             <p>구매목록이 없습니다.</p>
           )}

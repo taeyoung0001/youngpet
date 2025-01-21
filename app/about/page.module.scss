@@ -33,3 +33,15 @@
     }
   }
 }
+
+.cart {
+  .cartList {
+    border: 1px solid white;
+    margin: 10px auto;
+    border-radius: 15px;
+    h4 {
+      font-weight: 300;
+      color: rgb(0, 0, 0);
+    }
+  }
+}
